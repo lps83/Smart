@@ -45,12 +45,6 @@
 					liste(task,ul);	
 				}
 
-				function Save(){
-					if (typeof(Storage) !== "undefined") {
-						localStorage.getItem("ul")
-					}
-
-				}
 
 					function removeChecked(){
 						new_task = []
