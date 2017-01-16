@@ -160,12 +160,12 @@
 		<b>Choose the house</b>
 		<br>
 		<br>
-		<FORM>
-		<SELECT name="house_name_for_room" size="1">
+		<form method="POST" enctype="multipart/form-data">
+		<SELECT name="house_name_id_for_room" size="1">
 			
 			<?
 				
-				$sql = 'SELECT HOUSE_ID,HOUSE_STREET,HOUSE_CITY,HOUSE_ZIPCODE FROM HOUSES';
+				$sql = 'SELECT HOUSE_ID,HOUSE_NUMBER,HOUSE_STREET,HOUSE_CITY,HOUSE_ZIPCODE FROM HOUSES';
 				
 				$req = mysqli_query($connection, $sql);
 				
@@ -173,7 +173,7 @@
 				// on affiche les résultats
 
 				
-				echo '<OPTION>'.$data['HOUSE_ID'].' '.$data['HOUSE_STREET'].' '.$data['HOUSE_CITY'].'';
+				echo '<OPTION>'.$data['HOUSE_ID'].' - '.$data['HOUSE_NUMBER'].' '.$data['HOUSE_STREET'].' '.$data['HOUSE_CITY'].'';
 				
 				//echo 'maison : '.$data['HOUSE_STREET'].'';
 				
@@ -184,22 +184,50 @@
 				
 				?>
 		</SELECT>
+
+		<input type="submit" name="valider_room" value="Valider choix">
 		</FORM>
 
 		<p>
 			<br>
 		<b>Choose the room</b>
 		<br>
-		<? 
-			$house_name_for_room = $_POST['house_name_for_room'];
-			echo($house_name_for_room);
+		<? if (isset($_POST['valider_room'])){
+		$house_name_id_for_room = $_POST['house_name_id_for_room'];
+		
+        $house_name_id_for_room = ($house_name_id_for_room[0]);
+        
+			
+// 			echo($house_name_id_for_room);
+			}
+			
 			
 		?>
 		<FORM>
 		<SELECT name="nom" size="1">
-		<OPTION>Room 1	
-		<OPTION>Room 2
-		<OPTION>Room 3
+		
+			
+			<?
+				$house_id_choose = $house_name_id_for_room[0];
+				
+				$sql = ' SELECT ROOM_ID,ROOM_NAME,ROOM_FLOOR FROM ROOMS WHERE HOUSE_ID ".'$house_id_choose'." ';
+				
+				$req = mysqli_query($connection, $sql);
+				
+				while ($data = mysqli_fetch_array($req)) {
+				// on affiche les résultats
+
+				
+				echo '<OPTION>'.$data['ROOM_ID'].' - '.$data['ROOM_NAME'].' '.$data['ROOM_FLOOR'].'';
+				
+				//echo 'maison : '.$data['HOUSE_STREET'].'';
+				
+				}
+				mysqli_free_result ($req);
+				
+				
+				
+				?>
 		</SELECT>
 		</FORM>
 		<br>
