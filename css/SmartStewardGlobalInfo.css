@@ -1,0 +1,213 @@
+/* #########HEADER PART###########*/
+/* #########HEADER PART###########*/
+/* #########HEADER PART###########*/
+body{font-family: Calibri;}
+h1{font-family: Arial;
+padding-left: 100px;
+font-size: 50px;}
+p{
+	font-family: calibri;
+}
+h5{font-family: Arial;padding-left: 100px;
+text-align: center;}
+ul{
+	overflow-y:scroll;
+	height: 150px;
+}
+#photo1{
+	width: 150px;
+}
+#conteneur{display: flex;
+border:solid 1px grey;
+background-color: #e1e1ff;
+border-radius: 20px;
+}
+.element{
+
+/*border:dashed 1px black;*/}
+
+.element:nth-child(1){flex: 2;}
+
+.element:nth-child(2){flex: 1;}
+
+#id-photo {margin-left: 80%;
+width:60px;
+padding-top: 15px;
+}
+
+.element:nth-child(3){padding-right: 20px;}
+
+/* #########HEADER PART###########*/
+/* #########HEADER PART###########*/
+/* #########HEADER PART###########*/
+
+/* #########BODY PART###########*/
+/* #########BODY PART###########*/
+/* #########BODY PART###########*/
+
+
+#conteneur1{display: flex;
+	/*border:dashed 1px black;*/}
+#global-conteneur{
+	display: flex;
+	justify-content : center;}
+#sous-conteneur1{
+	display: flex;
+	border-top: solid 2px grey;
+	justify-content:space-around;}
+.element1:nth-child(1){
+	/*border:dashed 1px black;*/
+	/*text-align: right;*/
+	flex:1;}
+.element1:nth-child(2){
+	border:solid 2px grey;
+	border-radius: 20px;
+	flex:5;}
+
+.element-sous-conteneur{/*border:dashed 1px black;*/
+text-align: center;}
+
+.element-sous-conteneur:nth-child(1)
+{
+    flex:2;
+}
+.element-sous-conteneur:nth-child(2)
+{
+    flex:2;
+}
+
+/* ####################*/
+/* GLobal or global Conteneur */
+#global {
+	text-align: center;	
+	font-family: Calibri;
+}
+#global-conteneur{
+	display:flex;
+	justify-content: space-around;
+	padding-bottom: 10px;
+}
+.sousMenu{
+	
+	border-radius: 20px;
+	border: solid 1px #678;
+	font-family: calibri;
+	/*background-color: #678;*/
+	padding: 5px;
+
+
+}
+
+#sous-conteneur2{display: flex;
+	/*border:dashed 1px black;*/
+	justify-content:space-around;
+	text-align: center;
+
+	}
+
+.element-sous-conteneur2:nth-child(1){
+	flex:2;
+
+}
+.element-sous-conteneur2:nth-child(2){
+	flex:2;
+
+}
+.element-smoke-light{
+	/*border: solid 1px;*/
+	height: 75px;
+	margin-right: 10px;
+
+
+}
+.class1{
+	padding-top: 2.5%;
+	}
+
+/* ############LIST PART #############*/
+#list{list-style-type: none;
+}
+
+#liste3{
+	background: #678;
+	border-radius: 60px 0px 0px  60px;
+	text-align: center;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	margin: 1% 0 0 0;
+}
+
+a:link{
+	color: black;
+	text-decoration: none;}
+
+a:visited{
+	text-decoration: none;
+	color: black;}
+
+a:hover{color: #e1e1ff;}
+a:active{color: red;}
+
+/* ########## LIST PART ############*/
+.maison{width: 90%;
+height:90%;
+margin-top: 2.5%;
+border-radius: 20px;}	
+
+#todo{
+	/*border: solid 1px grey;*/
+	border-radius: 20px;
+	height: 300px;
+	text-align: center;
+}
+.esc1{
+	width:90%;
+	height: 90%;
+	border-radius: 20px;
+	position: center; 
+	margin-top: 2.5%;
+}
+
+li{
+	list-style-type: none;
+	font-family: calibri;
+}
+h2{
+	text-align: center;
+	font-family: Calibri;
+}
+h4{
+	
+	font-family: calibri;
+}
+
+#historique{
+	/*border: solid 1px grey;*/
+	border-radius: 20px;
+	height: 300px;
+	text-align: center;
+	font-family: calibri;
+}
+
+.b{
+	border-radius: 10px;
+	border: 2px solid grey;
+	font-family: Calibri;
+	
+}
+.b:hover{
+	border: 2px solid #D3DEC3;
+}
+
+
+
+#cont-hist{
+	border : solid 1px grey;
+}
+
+
+
+/* #########BODY PART###########*/
+/* #########BODY PART###########*/
+/* #########BODY PART###########*/
+
