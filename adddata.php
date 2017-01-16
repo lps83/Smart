@@ -40,8 +40,7 @@
         $HOUSEID = ($HOUSE_ID[0]);
         
         $query = "INSERT INTO `ROOMS` (HOUSE_ID, ROOM_NAME, ROOM_FLOOR ) VALUES ('$HOUSEID', '$ROOM_NAME', '$ROOM_FLOOR')";
-        
-//         echo($query);
+
         
         $result = mysqli_query($connection, $query);
         if($result){
@@ -49,6 +48,66 @@
             }
         else{
 	        $smsg = "Problems";
+	        }
+	        
+	        }
+	        
+	if (isset($_POST['add_sensor'])){
+
+		
+       
+        $ROOM_ID = $_POST['room_name_id'];
+        
+        $SENSOR_NAME = $_POST['SENSOR_NAME'];
+        $SENSOR_TYPE = $_POST['SENSOR_TYPE'];
+        $SENSOR_DATA = $_POST['SENSOR_DATA'];
+        $SENSOR_TIME = $_POST['SENSOR_TIME'];
+
+        
+        $ROOMID = ($ROOM_ID[0]);
+        
+//         echo($ROOMID);
+        
+        $query = "INSERT INTO `SENSORS` (ROOM_ID, SENSOR_NAME, SENSOR_TYPE, SENSOR_DATA, SENSOR_TIME ) VALUES ('$ROOMID', '$SENSOR_NAME', '$SENSOR_TYPE', '$SENSOR_DATA', '$SENSOR_TIME')";
+
+//         echo($query);
+        
+        $result = mysqli_query($connection, $query);
+        if($result){
+            $smsg = "Sensor Created Successfully.";
+            }
+        else{
+	        echo "Problems";
+	        }
+	        
+	        }
+	        
+if (isset($_POST['add_actuator'])){
+
+		
+       
+        $ROOM_ID = $_POST['room_name_id'];
+        
+        $ACURATOR_NAME = $_POST['ACURATOR_NAME'];
+        $ACURATOR_TYPE = $_POST['ACURATOR_TYPE'];
+        $ACURATOR_DATA = $_POST['ACURATOR_DATA'];
+        $ACURATOR_TIME = $_POST['ACURATOR_TIME'];
+
+        
+        $ROOMID = ($ROOM_ID[0]);
+        
+//         echo($ROOMID);
+        
+        $query = "INSERT INTO `ACURATORS` (ROOM_ID, ACURATOR_NAME, ACURATOR_TYPE, ACURATOR_DATA, ACURATOR_TIME ) VALUES ('$ROOMID', '$ACURATOR_NAME', '$ACURATOR_TYPE', '$ACURATOR_DATA', '$ACURATOR_TIME')";
+
+//         echo($query);
+        
+        $result = mysqli_query($connection, $query);
+        if($result){
+            $smsg = "ACURATOR Created Successfully.";
+            }
+        else{
+	        echo "Problems";
 	        }
 	        
 	        }
@@ -197,21 +256,24 @@
 		
         $house_name_id_for_room = ($house_name_id_for_room[0]);
         
-			
+
 // 			echo($house_name_id_for_room);
 			}
 			
 			
+			
+				
+				
 		?>
-		<FORM>
-		<SELECT name="nom" size="1">
+		<form method="POST" enctype="multipart/form-data">
+		<SELECT name="room_name_id" size="1">
 		
 			
-			<?
-				$house_id_choose = $house_name_id_for_room[0];
+			<?	if (isset($_POST['valider_room'])){
+			
 				
-				$sql = ' SELECT ROOM_ID,ROOM_NAME,ROOM_FLOOR FROM ROOMS WHERE HOUSE_ID ".'$house_id_choose'." ';
-				
+
+				$sql = "SELECT ROOM_ID,ROOM_NAME,ROOM_FLOOR FROM ROOMS WHERE HOUSE_ID = ".$house_name_id_for_room." ";
 				$req = mysqli_query($connection, $sql);
 				
 				while ($data = mysqli_fetch_array($req)) {
@@ -219,6 +281,48 @@
 
 				
 				echo '<OPTION>'.$data['ROOM_ID'].' - '.$data['ROOM_NAME'].' '.$data['ROOM_FLOOR'].'';
+
+				}
+				mysqli_free_result ($req);
+				}
+				
+				
+				?>
+		</SELECT>
+		
+		<br>
+		
+			
+			<input type="text" name="SENSOR_NAME" placeholder="SENSOR_NAME" required>
+			<p>
+			<input type="text" name="SENSOR_TYPE" placeholder="SENSOR_TYPE" required>
+			<p>
+			<input type="text" name="SENSOR_DATA" placeholder="SENSOR_DATA" required>
+			<p>
+			<input type="text" name="SENSOR_TIME" placeholder="SENSOR_TIME" required>
+			<p>
+			<input type="submit" name="add_sensor" value="Add Sensor">
+			</FORM>
+		<h1>Add Actuator value</h1>
+		
+		<p>
+		<b>Choose the house</b>
+		<br>
+		<br>
+		<form method="POST" enctype="multipart/form-data">
+		<SELECT name="house_name_id_for_room" size="1">
+			
+			<?
+				
+				$sql = 'SELECT HOUSE_ID,HOUSE_NUMBER,HOUSE_STREET,HOUSE_CITY,HOUSE_ZIPCODE FROM HOUSES';
+				
+				$req = mysqli_query($connection, $sql);
+				
+				while ($data = mysqli_fetch_array($req)) {
+				// on affiche les résultats
+
+				
+				echo '<OPTION>'.$data['HOUSE_ID'].' - '.$data['HOUSE_NUMBER'].' '.$data['HOUSE_STREET'].' '.$data['HOUSE_CITY'].'';
 				
 				//echo 'maison : '.$data['HOUSE_STREET'].'';
 				
@@ -229,12 +333,66 @@
 				
 				?>
 		</SELECT>
+
+		<input type="submit" name="valider_room" value="Valider choix">
 		</FORM>
+
+		<p>
+			<br>
+		<b>Choose the room</b>
 		<br>
+		<? if (isset($_POST['valider_room'])){
+		$house_name_id_for_room = $_POST['house_name_id_for_room'];
+		
+        $house_name_id_for_room = ($house_name_id_for_room[0]);
+        
+
+// 			echo($house_name_id_for_room);
+			}
+			
+			
+			
+				
+				
+		?>
 		<form method="POST" enctype="multipart/form-data">
-			<input type="text" name="sensor_name" placeholder="The Name of The Sensor" required>
-			<input type="submit" id="add_sensor" value="Add Sensor">
-		<h1>Add Actuator</h1>
+		<SELECT name="room_name_id" size="1">
+		
+			
+			<?	if (isset($_POST['valider_room'])){
+			
+				
+
+				$sql = "SELECT ROOM_ID,ROOM_NAME,ROOM_FLOOR FROM ROOMS WHERE HOUSE_ID = ".$house_name_id_for_room." ";
+				$req = mysqli_query($connection, $sql);
+				
+				while ($data = mysqli_fetch_array($req)) {
+				// on affiche les résultats
+
+				
+				echo '<OPTION>'.$data['ROOM_ID'].' - '.$data['ROOM_NAME'].' '.$data['ROOM_FLOOR'].'';
+
+				}
+				mysqli_free_result ($req);
+				}
+				
+				
+				?>
+		</SELECT>
+		
+		<br>
+		
+			
+			<input type="text" name="ACURATOR_NAME" placeholder="ACURATOR_NAME" required>
+			<p>
+			<input type="text" name="ACURATOR_TYPE" placeholder="ACURATOR_TYPE" required>
+			<p>
+			<input type="text" name="ACURATOR_DATA" placeholder="ACURATOR_DATA" required>
+			<p>
+			<input type="text" name="ACURATOR_TIME" placeholder="ACURATOR_TIME" required>
+			<p>
+			<input type="submit" name="add_actuator" value="Add Actuator">
+			</FORM>
 		
 			
 		<p>
