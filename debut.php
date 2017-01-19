@@ -46,7 +46,7 @@ $fmsg = "Invalid Login Credentials.";
             
 		    	<div class="element"> 
 			    	<?php
-						if (isset($_SESSION['username'])){
+						if (isset($_SESSION['username']) && isset($_SESSION['house_id'])){
 						$username = $_SESSION['username'];
 						echo "<br />";
 						echo('<img src = "./photo/'.$username.'.jpg"  WIDTH=130 HEIGHT=130 align="right"/>  ');
@@ -66,11 +66,22 @@ $fmsg = "Invalid Login Credentials.";
 	    		<?php
 					if (isset($_SESSION['username'])){
 					$username = $_SESSION['username'];
+					$house_id = $_SESSION['house_id'];
 					echo "<br />";
-					echo "Bienvenue " . $username . "
-					";
-					echo "<br /><br />";
+					echo "Bienvenue " . $username . " ";
+					echo "<br />";
+					echo "Maison " . $house_id . " ";
+					echo "<br />";
+				
 					 
+				$sql_house = "SELECT HOUSE_NUMBER,HOUSE_STREET,HOUSE_CITY,HOUSE_ZIPCODE FROM HOUSES WHERE HOUSE_ID = ".$house_id." ";
+				$req_house = mysqli_query($connection, $sql_house);
+				
+				$data_house = mysqli_fetch_array($req_house);
+				
+				echo ' '.$data_house['HOUSE_NUMBER'].' '.$data_house['HOUSE_STREET'].' '.$data_house['HOUSE_ZIPCODE'].' '.$data_house['HOUSE_CITY'].'';
+				echo "<br /><br />";
+				
 					}?>
                 <button onclick = "quitter()" class = "b">Logout</button>
             </div>
