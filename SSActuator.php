@@ -2,24 +2,57 @@
     
 <div class="element1"><br>
 				<div id = "global-conteneur">
-					<a href = "#"><div class = "sousMenu">actuator 1 </div></a>
-					<a href = "#"><div class = "sousMenu">actuator 2</div></a>
-					<a href = "#"><div class = "sousMenu">actuator 3</div></a>
-					<a href = "#"><div class = "sousMenu">actuator 4 </div></a>
+					<a href = "./SSActuator.php?page=temp"><div class = "sousMenu">Temperature</div></a>
+					<a href = "./SSActuator.php?page=humid"><div class = "sousMenu">Humidity</div></a>
+					<a href = "./SSActuator.php?page=energ"><div class = "sousMenu">Energy</div></a>
+					<a href = "./SSActuator.php?page=light"><div class = "sousMenu">Light</div></a>
 				</div>
+
 				<div id = "sous-conteneur1">
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
+					<?
+					
+					if(isset($_GET["page"])){
+						
+						$page = $_GET["page"];
+						
+						
+						switch($page){
+							
+							case "temp":
+							
+							include("./atemp.php");
+							
+							break;
+							
+							case "humid":
+							include("./ahumid.php");
+							break;
+							
+							case "energ":
+							include("./aenerg.php");
+							break;
+							
+							case "light":
+							include("./alight.php");
+							break;
+							
+						}
+						}
+						else{
+							
+							echo "Click on a TAB";
+							
+						}
+						
+						
+					
+					
+					?>
 				</div>
 				<br>
-				<div id = "sous-conteneur2">
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-				</div>	
+				
 			</div>
 		</div>
 		
-		    
+		
     <?php include("./fin.php"); ?>

@@ -25,6 +25,7 @@ $i = 0 ;
 
 
 					$tab_name[$i] = $data_name['ROOM_NAME'];
+					echo $tab_name[$i];
 					$tab_id[$i] = $data_name['ROOM_ID'];
 					$i++;
 					
