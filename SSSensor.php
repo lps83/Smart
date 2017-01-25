@@ -2,23 +2,55 @@
     
 <div class="element1"><br>
 				<div id = "global-conteneur">
-					<a href = "#"><div class = "sousMenu">sensor 1 </div></a>
-					<a href = "#"><div class = "sousMenu">sensor 2</div></a>
-					<a href = "#"><div class = "sousMenu">sensor 3</div></a>
-					<a href = "#"><div class = "sousMenu">sensor 4 </div></a>
+					<a href = "./SSSensor.php?page=temp"><div class = "sousMenu">Temperature</div></a>
+					<a href = "./SSSensor.php?page=humid"><div class = "sousMenu">Humidity</div></a>
+					<a href = "./SSSensor.php?page=energ"><div class = "sousMenu">Energy</div></a>
+					<a href = "./SSSensor.php?page=light"><div class = "sousMenu">Light</div></a>
 				</div>
 
 				<div id = "sous-conteneur1">
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
+					<?
+					
+					if(isset($_GET["page"])){
+						
+						$page = $_GET["page"];
+						
+						
+						switch($page){
+							
+							case "temp":
+							
+							include("./stemp.php");
+							
+							break;
+							
+							case "humid":
+							include("./shumid.php");
+							break;
+							
+							case "energ":
+							include("./senerg.php");
+							break;
+							
+							case "light":
+							include("./slight.php");
+							break;
+							
+						}
+						}
+						else{
+							
+							echo "Click on a TAB";
+							
+						}
+						
+						
+					
+					
+					?>
 				</div>
 				<br>
-				<div id = "sous-conteneur2">
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-					<div class="element-sous-conteneur"><img class = "maison" src = "./images/smart home.jpg"/></div>
-				</div>	
+				
 			</div>
 		</div>
 		

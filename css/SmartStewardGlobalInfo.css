@@ -52,9 +52,10 @@ padding-top: 15px;
 	display: flex;
 	justify-content : center;}
 #sous-conteneur1{
+	padding-top: 20px;
 	display: flex;
 	border-top: solid 2px grey;
-	justify-content:space-around;}
+	justify-content:center;}
 .element1:nth-child(1){
 	/*border:dashed 1px black;*/
 	/*text-align: right;*/
@@ -205,6 +206,25 @@ h4{
 	border : solid 1px grey;
 }
 
+
+
+table
+{
+    border-collapse: collapse; 
+}
+td
+{
+    border: 1px solid black;
+    width: 250px;
+    text-align: center;
+    height: 30px;
+}
+
+#formsensor{
+	
+	text-align: center;
+	padding-top: 20px;
+}
 
 
 /* #########BODY PART###########*/
