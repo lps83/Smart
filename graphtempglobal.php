@@ -21,39 +21,29 @@ switch ($nbderoom){
 	$MyData->addPoints(array(intval($_GET['v00']),intval($_GET['v01']),intval($_GET['v02']),intval($_GET['v03']),intval($_GET['v04']),intval($_GET['v05'])),$_GET['v0name']);
 	$MyData->addPoints(array(intval($_GET['v10']),intval($_GET['v11']),intval($_GET['v12']),intval($_GET['v13']),intval($_GET['v14']),intval($_GET['v15'])),$_GET['v1name']);
 	break;
-	
-/*
+
 	case "3":
-	$MyData->addPoints(array(intval($_GET['v00'],intval($_GET['v01'],intval($_GET['v02'],intval($_GET['v03'],intval($_GET['v04'],intval($_GET['v05'],$_GET['v0name']);
-	$MyData->addPoints(array(intval($_GET['v10'],intval($_GET['v11'],intval($_GET['v12'],intval($_GET['v13'],intval($_GET['v14'],intval($_GET['v15'],$_GET['v1name']);
-	$MyData->addPoints(array(intval($_GET['v20'],intval($_GET['v21'],intval($_GET['v22'],intval($_GET['v23'],intval($_GET['v24'],intval($_GET['v25'],$_GET['v2name']);
+	$MyData->addPoints(array(intval($_GET['v00']),intval($_GET['v01']),intval($_GET['v02']),intval($_GET['v03']),intval($_GET['v04']),intval($_GET['v05'])),$_GET['v0name']);
+	$MyData->addPoints(array(intval($_GET['v10']),intval($_GET['v11']),intval($_GET['v12']),intval($_GET['v13']),intval($_GET['v14']),intval($_GET['v15'])),$_GET['v1name']);
+	$MyData->addPoints(array(intval($_GET['v20']),intval($_GET['v21']),intval($_GET['v22']),intval($_GET['v23']),intval($_GET['v24']),intval($_GET['v25'])),$_GET['v2name']);
 	break;
 	
 	case "4":
-	$MyData->addPoints(array(intval($_GET['v00'],intval($_GET['v01'],intval($_GET['v02'],intval($_GET['v03'],intval($_GET['v04'],intval($_GET['v05'],$_GET['v0name']);
-	$MyData->addPoints(array(intval($_GET['v10'],intval($_GET['v11'],intval($_GET['v12'],intval($_GET['v13'],intval($_GET['v14'],intval($_GET['v15'],$_GET['v1name']);
-	$MyData->addPoints(array(intval($_GET['v20'],intval($_GET['v21'],intval($_GET['v22'],intval($_GET['v23'],intval($_GET['v24'],intval($_GET['v25'],$_GET['v2name']);
-	$MyData->addPoints(array(intval($_GET['v30'],intval($_GET['v31'],intval($_GET['v32'],intval($_GET['v33'],intval($_GET['v34'],intval($_GET['v35'],$_GET['v3name']);
+	$MyData->addPoints(array(intval($_GET['v00']),intval($_GET['v01']),intval($_GET['v02']),intval($_GET['v03']),intval($_GET['v04']),intval($_GET['v05'])),$_GET['v0name']);
+	$MyData->addPoints(array(intval($_GET['v10']),intval($_GET['v11']),intval($_GET['v12']),intval($_GET['v13']),intval($_GET['v14']),intval($_GET['v15'])),$_GET['v1name']);
+	$MyData->addPoints(array(intval($_GET['v20']),intval($_GET['v21']),intval($_GET['v22']),intval($_GET['v23']),intval($_GET['v24']),intval($_GET['v25'])),$_GET['v2name']);
+	$MyData->addPoints(array(intval($_GET['v30']),intval($_GET['v31']),intval($_GET['v32']),intval($_GET['v33']),intval($_GET['v34']),intval($_GET['v35'])),$_GET['v3name']);
 	break;
 	
 	case "5":
-	$MyData->addPoints(array(intval($_GET['v00'],intval($_GET['v01'],intval($_GET['v02'],intval($_GET['v03'],intval($_GET['v04'],intval($_GET['v05'],$_GET['v0name']);
-	$MyData->addPoints(array(intval($_GET['v10'],intval($_GET['v11'],intval($_GET['v12'],intval($_GET['v13'],intval($_GET['v14'],intval($_GET['v15'],$_GET['v1name']);
-	$MyData->addPoints(array(intval($_GET['v20'],intval($_GET['v21'],intval($_GET['v22'],intval($_GET['v23'],intval($_GET['v24'],intval($_GET['v25'],$_GET['v2name']);
-	$MyData->addPoints(array(intval($_GET['v30'],intval($_GET['v31'],intval($_GET['v32'],intval($_GET['v33'],intval($_GET['v34'],intval($_GET['v35'],$_GET['v3name']);
-	$MyData->addPoints(array(intval($_GET['v40'],intval($_GET['v41'],intval($_GET['v42'],intval($_GET['v43'],intval($_GET['v44'],intval($_GET['v45'],$_GET['v4name']);
+	$MyData->addPoints(array(intval($_GET['v00']),intval($_GET['v01']),intval($_GET['v02']),intval($_GET['v03']),intval($_GET['v04']),intval($_GET['v05'])),$_GET['v0name']);
+	$MyData->addPoints(array(intval($_GET['v10']),intval($_GET['v11']),intval($_GET['v12']),intval($_GET['v13']),intval($_GET['v14']),intval($_GET['v15'])),$_GET['v1name']);
+	$MyData->addPoints(array(intval($_GET['v20']),intval($_GET['v21']),intval($_GET['v22']),intval($_GET['v23']),intval($_GET['v24']),intval($_GET['v25'])),$_GET['v2name']);
+	$MyData->addPoints(array(intval($_GET['v30']),intval($_GET['v31']),intval($_GET['v32']),intval($_GET['v33']),intval($_GET['v34']),intval($_GET['v35'])),$_GET['v3name']);
+	$MyData->addPoints(array(intval($_GET['v40']),intval($_GET['v41']),intval($_GET['v42']),intval($_GET['v43']),intval($_GET['v44']),intval($_GET['v45'])),$_GET['v4name']);
 	break;
-	
-	case "6":
-	$MyData->addPoints(array(intval($_GET['v00'],intval($_GET['v01'],intval($_GET['v02'],intval($_GET['v03'],intval($_GET['v04'],intval($_GET['v05'],$_GET['v0name']);
-	$MyData->addPoints(array(intval($_GET['v10'],intval($_GET['v11'],intval($_GET['v12'],intval($_GET['v13'],intval($_GET['v14'],intval($_GET['v15'],$_GET['v1name']);
-	$MyData->addPoints(array(intval($_GET['v20'],intval($_GET['v21'],intval($_GET['v22'],intval($_GET['v23'],intval($_GET['v24'],intval($_GET['v25'],$_GET['v2name']);
-	$MyData->addPoints(array(intval($_GET['v30'],intval($_GET['v31'],intval($_GET['v32'],intval($_GET['v33'],intval($_GET['v34'],intval($_GET['v35'],$_GET['v3name']);
-	$MyData->addPoints(array(intval($_GET['v40'],intval($_GET['v41'],intval($_GET['v42'],intval($_GET['v43'],intval($_GET['v44'],intval($_GET['v45'],$_GET['v4name']);
-	$MyData->addPoints(array(intval($_GET['v50'],intval($_GET['v51'],intval($_GET['v52'],intval($_GET['v53'],intval($_GET['v54'],intval($_GET['v55'],$_GET['v5name']);
-	break;
-*/
-	
+
+
 	 
  }
 
